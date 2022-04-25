@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import {Link} from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 // ESTA SSERIA LA PÁGINA PRINCIPAL
 
@@ -15,7 +14,7 @@ const Principal = (props) => {
           Bienvenido a mi single page apliation donde encontraran un buscador de
           paises de todo el mundo y ademas podran hacer mas consultas
         </Text>
-        <Link to='/home' style={{ width: "60%"}}>
+        <Link to="/home" style={{ width: "60%" }}>
           <Boton>INGRESAR</Boton>
         </Link>
       </Container>
@@ -56,14 +55,13 @@ const Boton = styled.button`
 
 const Text = styled.div`
   width: 90%;
-  height: 200px;
   box-sizing: border-box;
   max-height: 250px;
-  border: 2px solid rgba(154, 156, 156, 0.32);
-  border-radius: 15px;
+  border: 2px solid #303f9f;
   padding: 10px 20px;
   margin: 20px auto;
-  color: white;
+  background-color: #5862a1;
+  color: #fff;
   font-weight: bold;
   text-align: justify;
 `;
@@ -77,6 +75,12 @@ const Container = styled.div`
   letter-spacing: 1.15px;
   /* border: 6px solid violet; */
   /* color:white; */
+  h1 {
+    padding: 0px 10px 8px 10px;
+    color: #fff;
+    text-decoration: underline;
+    background-color: #5862a1;
+  }
 `;
 
 export default Principal;
