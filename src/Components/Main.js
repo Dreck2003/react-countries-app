@@ -21,7 +21,7 @@ const Main = (props) => {
           />
         ))
       ) : (
-        <h3 className="not-exist">Countries not found</h3>
+        <h3 className="not-exist">Loading...</h3>
       )}
     </Container>
   );
