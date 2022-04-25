@@ -9,7 +9,7 @@ const Main = (props) => {
 
   return (
     <Container style={{ color: "white" }}>
-      {console.log("EL estado: ", estado)}
+      {/* {console.log("EL estado: ", estado)} */}
       {estado.hasOwnProperty("data") ? (
         estado.data.map((country) => (
           <Countrycard

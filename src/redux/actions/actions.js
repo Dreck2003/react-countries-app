@@ -21,6 +21,9 @@ export const ACTIVIDAD = "ACTIVIDAD";
 //Busqueda:
 export const FILTROS = "FILTROS";
 
+const URL_BASE = "https://app-countries-dreck.herokuapp.com";
+// const URL_BASE = "http://localhost:3001/";
+
 //ACTIONS PARA CAMBIAR EL NODO:
 export function goBack() {
   // console.log('algo paso en el anterior');
@@ -64,7 +67,7 @@ export const filterActivity = (value) => {
 
 export const getCountry = (id) => {
   return function (dispatch) {
-    return fetch(`http://localhost:3001/api/countries/${id}`)
+    return fetch(`${URL_BASE}/api/countries/${id}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log('countries: ',data)
@@ -83,7 +86,7 @@ export const filter = (filtros) => {
   return async function (dispatch) {
     try {
       const res = await fetch(
-        `http://localhost:3001/api/countries?name=${filtros.name}&continent=${filtros.continent}&order=${filtros.order}`
+        `${URL_BASE}/api/countries?name=${filtros.name}&continent=${filtros.continent}&order=${filtros.order}`
       );
       const data = await res.json();
       if (!data.error) {
@@ -104,7 +107,7 @@ export const actividad = (name) => {
   if (name === "Activity") name = "";
 
   return function (dispatch) {
-    return fetch(`http://localhost:3001/api/activities?nombre=${name}`)
+    return fetch(`${URL_BASE}/api/activities?nombre=${name}`)
       .then((res) => res.json())
       .then((data) => {
         console.log("llego la respuesta: ", data);
@@ -122,7 +125,7 @@ export const actividad = (name) => {
 export const search_Activities = () => {
   return async function (dispatch) {
     try {
-      const res = await fetch(`http://localhost:3001/api/activities?nombre=`);
+      const res = await fetch(`${URL_BASE}/api/activities?nombre=`);
       const data = await res.json();
       if (data.error) {
         alert(data.error.toString());
@@ -141,7 +144,7 @@ export const search_Activities = () => {
 export const getCountries = () => {
   return async (dispatch) => {
     try {
-      const response = await fetch("http://localhost:3001/api/countries");
+      const response = await fetch(`${URL_BASE}/api/countries`);
       // console.log("respuesta de los paises: ", response);
       const data = await response.json();
       dispatch({

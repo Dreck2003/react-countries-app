@@ -194,6 +194,11 @@ const CreateActivity = (props) => {
     }
 
     if (flag) {
+      let newFeatures = {
+        ...features,
+        dificultad: Number(features.dificultad),
+        duracion: Number(features.duracion),
+      };
       fetchActivity(features, (data) => {
         dispatch(search_Activities());
         alert("Actividad creada");

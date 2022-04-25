@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 // import recorrido from '../functions/recorridoLista.js';
 
+const BASE_URL = "https://app-countries-dreck.herokuapp.com";
+
 function* cortes(countries) {
   let array = [];
   array.push(countries[0]);
@@ -26,7 +28,7 @@ export const Modal = (props) => {
   const [countries, setCountries] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/countries?name")
+    fetch(`${BASE_URL}/api/countries`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);

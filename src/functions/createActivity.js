@@ -1,11 +1,14 @@
+const BASE_URL = "https://app-countries-dreck.herokuapp.com";
+
 /**
  * REceived features (datatables), callback
  * @param {} features
  * @param {*} callback
  */
 export const fetchActivity = async (features, callback) => {
+  console.log("Los features: ", features);
   try {
-    const response = await fetch("http://localhost:3001/api/activities", {
+    const response = await fetch(`${BASE_URL}/api/activities`, {
       method: "POST",
       headers: {
         Accept: "application/json",
